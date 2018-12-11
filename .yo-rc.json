@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Alan Zhang",
+      "authorEmail": "zhangchaofan@jd.com",
+      "authorUrl": "https://github.com/zcfan"
+    }
+  }
+}

@@ -6,7 +6,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 
-export default class DemoComponent extends Component {
+export default class LingComponent extends Component {
 
   componentWillMount () { }
 
@@ -20,7 +20,7 @@ export default class DemoComponent extends Component {
 
   render () {
     return (
-      <View className='demo-component'>
+      <View className='component-<%= componentId %>'>
         <Text>请在这里实现您的组件</Text>
       </View>
     )
