@@ -1,6 +1,6 @@
 {
   "name": "generator-ling-component",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "玲珑组件库第三方组件脚手架",
   "homepage": "https://github.com/ling-components/generator-ling-component",
   "author": {
@@ -13,7 +13,6 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
     "yeoman-generator"
   ],
   "devDependencies": {

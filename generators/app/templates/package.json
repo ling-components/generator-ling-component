@@ -5,6 +5,11 @@
   "description": "玲珑组件库组件模板",
   "author": "O2Team <aotu.io>",
   "license": "MIT",
+  "eslintIgnore": [
+    "build/",
+    "config/",
+    "node_modules/"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "build:weapp": "taro build --type weapp",
@@ -19,8 +24,7 @@
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev": "npm run dev:h5",
-    "build": "cross-env TARO_BUILD_TYPE=ui taro build --ui",
-    "pack": "git clone .git ./dist/project && rm -rf ./dist/project/.git"
+    "build": "cross-env TARO_BUILD_TYPE=ui taro build --ui"
   },
   "dependencies": {
     "@tarojs/components": "1.1.0",

@@ -1,11 +1,9 @@
 /**
- * @file 开发期间组件预览入口
+ * @file 组件预览入口，请勿修改
  */
 
 import Taro, { Component } from '@tarojs/taro'
 import Preview from './pages/preview'
-
-import './app.scss'
 
 class PreviewApp extends Component {
 
