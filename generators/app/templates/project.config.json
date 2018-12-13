@@ -1,7 +1,6 @@
 {
   "miniprogramRoot": "./dist",
   "projectname": "<%= name %>",
-  "description": "<%= description %>",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,

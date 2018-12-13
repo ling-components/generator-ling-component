@@ -2,19 +2,21 @@
 
 ## 简介
 
-<%= description %>
+玲玲组件库组件依赖 [Taro](https://nervjs.github.io/taro/docs/README.html) 框架，要求开发者对 Taro 有一定了解。
 
 ## 快速开始
 
-本项目为玲珑组件库组件生成器（generator-ling-component）自动生成，为正常编译，开发者需要全局安装 taro-cli 1.1.0 版本。
-
 ```
+// 全局安装 Taro cli 1.1.0 版本
 npm install -g @tarojs/cli@1.1.0
+
+// 运行项目
+npm run dev
 ```
 
-执行 `npm run dev` 开始开发，组件代码位于 `src/component/` 下，其他内容开发者无需改动。
+组件代码位于 `src/component/` 下，其他内容开发者无需改动。
 
-开发完毕后请执行 `npm run pack` 并将生成的 tgz 文件（位于项目根目录）上传至玲珑组件库平台。
+开发完成请执行 `npm run pack` 并将位于项目根目录的 `tgz` 文件上传至玲珑组件库平台。
 
 ## 注意
 

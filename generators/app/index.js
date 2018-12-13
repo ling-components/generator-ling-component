@@ -9,7 +9,7 @@ module.exports = class extends Generator {
     this.log(chalk.white(`欢迎使用玲珑组件库组件项目生成器！`));
     this.log(
       chalk.gray(
-        `若您还没有创建组件，请先前往 https://zjk.jd.com 注册成为开发者并创建组件获取组件 ID\n生成的组件项目使用 Taro 以做到多终端运行，需要了解 Taro 请访问 https://taro.js.org/ 。\n若还没有安装 taro-cli 请稍后执行\n  npm install -g @tarojs/cli@1.1.0\n以全局安装 taro-cli 1.1.0 版本\n`
+        `若您还没有创建组件，请先前往 https://zjk.jd.com 注册成为开发者并创建组件获取组件 ID`
       )
     );
     this.log(
@@ -22,21 +22,32 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "name",
-        message: "请输入项目名（仅用于生成项目文件夹）",
+        message: "请输入项目文件夹名",
         default: "ling-component-demo",
-        validate: answer => answer !== ""
-      },
-      {
-        type: "input",
-        name: "description",
-        message: "请输入项目简介",
-        default: ""
+        validate: answer => {
+          if (typeof answer !== "string") {
+            return "请输入项目文件夹名";
+          }
+          const nameRegx = /^[a-z|A-Z|0-9|-|_]+$/;
+          if (!nameRegx.test(answer)) {
+            return "文件夹名只能包含 a-z,A-Z,0-9,_,-";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "componentId",
-        message: "请输入组件 ID",
-        validate: answer => answer !== ""
+        message: "请输入组件 ID（见组件详情页面）",
+        validate: answer => {
+          const notString = typeof answer !== "string";
+          // 组件 ID 为 24 位小写字母与数字组成的字符串
+          const compIdRegx = /^[a-z|0-9]{24}$/;
+          if (notString || !compIdRegx.test(answer)) {
+            return "格式错误，请前往 zjk.jd.com 创建组件以获取组件 ID";
+          }
+          return true;
+        }
       }
     ];
 
@@ -68,7 +79,11 @@ module.exports = class extends Generator {
   end() {
     this.log(
       chalk.cyan(
-        `完成！请查看 ${this.answers.name}/readme.md 了解项目并开始工作吧！`
+        `项目已创建！请查看 ${chalk.bold
+          .rgb(0, 0, 0)
+          .bgCyan(
+            " " + this.answers.name + "/readme.md "
+          )} 了解项目并开始工作吧！`
       )
     );
   }
