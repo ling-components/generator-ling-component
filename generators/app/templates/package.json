@@ -24,7 +24,8 @@
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev": "npm run dev:h5",
-    "build": "cross-env TARO_BUILD_TYPE=ui taro build --ui"
+    "build": "cross-env TARO_BUILD_TYPE=ui taro build --ui",
+    "pack": "npm pack"
   },
   "dependencies": {
     "@tarojs/components": "1.1.0",

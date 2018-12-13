@@ -22,7 +22,7 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "name",
-        message: "请输入项目名",
+        message: "请输入项目名（仅用于生成项目文件夹）",
         default: "ling-component-demo",
         validate: answer => answer !== ""
       },
@@ -67,7 +67,9 @@ module.exports = class extends Generator {
 
   end() {
     this.log(
-      chalk.cyan(`完成！进入 ${this.answers.name}/src/component/ 开始工作吧！`)
+      chalk.cyan(
+        `完成！请查看 ${this.answers.name}/readme.md 了解项目并开始工作吧！`
+      )
     );
   }
 };
