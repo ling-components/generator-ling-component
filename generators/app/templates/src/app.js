@@ -2,22 +2,22 @@
  * @file 组件预览入口，请勿修改
  */
 
-import Taro, { Component } from '@tarojs/taro'
-import Preview from './pages/preview'
+import Taro from '@tarojs/taro'
+import Index from './pages/index/index'
 
-class PreviewApp extends Component {
+class App extends Taro.Component {
 
   config = {
     pages: [
-      'pages/preview/index'
+      'pages/index/index'
     ]
   }
 
   render () {
     return (
-      <Preview />
+      <Index />
     )
   }
 }
 
-Taro.render(<PreviewApp />, document.getElementById('app'))
+Taro.render(<App /> , document.getElementById('app'))
