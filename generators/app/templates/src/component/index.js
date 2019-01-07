@@ -21,7 +21,13 @@ export default class LingComponent extends Component {
   render () {
     return (
       <View className='component-<%= componentId %>'>
-        <Text>请在这里实现您的组件</Text>
+        <Text
+          style={{
+            color: this.props.color
+          }}
+        >
+          {this.props.text}
+        </Text>
       </View>
     )
   }

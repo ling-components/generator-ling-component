@@ -1,0 +1,11 @@
+{
+  "color": {
+    "text": "字体颜色",
+    "category": "style",
+    "type": "color"
+  },
+  "text": {
+    "text": "内容",
+    "category": "data"
+  }
+}

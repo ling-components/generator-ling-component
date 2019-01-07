@@ -1,5 +1,5 @@
 const path = require('path')
-const lcConfig = require('../lc-config.json')
+const packageConfig = require('../package.json')
 
 const config = {
   projectName: 'ling-component',
@@ -90,7 +90,7 @@ if (process.env.TARO_BUILD_TYPE === 'ui') {
 }
 
 // 打包为 atom 所需组件
-else if (process.env.TARO_BUILD_TYPE === 'react') {
+else if (process.env.TARO_BUILD_TYPE === 'script') {
   Object.assign(config.h5, {
     enableSourceMap: false,
     enableExtract: false,
@@ -107,15 +107,15 @@ else if (process.env.TARO_BUILD_TYPE === 'react') {
         path: path.join(process.cwd(), 'dist', 'h5'),
         filename: 'index.js',
         libraryTarget: 'window',
-        // 所有组件注册到 LCC 命名空间下
-        library: ['LCC', lcConfig.id]
+        // 所有组件注册到 Lc 命名空间下
+        library: ['Lc', packageConfig.name]
       },
       externals: {
-        nervjs: ['LCC', 'base', 'ReactBundle'],
-        classnames: ['LCC', 'base', 'classNames'],
-        '@tarojs/components': ['LCC', 'base', 'taroComponents'],
-        '@tarojs/taro-h5': ['LCC', 'base', 'taroH5'],
-        'weui': ['LCC', 'base', 'weui']
+        nervjs: ['Lc', 'base', 'ReactBundle'],
+        classnames: ['Lc', 'base', 'classNames'],
+        '@tarojs/components': ['Lc', 'base', 'taroComponents'],
+        '@tarojs/taro-h5': ['Lc', 'base', 'taroH5'],
+        'weui': ['Lc', 'base', 'weui']
       }
     })
   }
